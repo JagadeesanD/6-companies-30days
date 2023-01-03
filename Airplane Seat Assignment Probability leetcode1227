@@ -1,0 +1,10 @@
+class Solution:
+    def nthPersonGetsNthSeat(self, n: int) -> float:
+        def nthPersonGetsNthSeat(n: int) -> float:
+    return 1.0 / n
+
+print(nthPersonGetsNthSeat(1)) 
+print(nthPersonGetsNthSeat(2))  
+print(nthPersonGetsNthSeat(3))  
+
+//evaluvated Airplane Seat Assignment Probability in python
