@@ -1,0 +1,15 @@
+class Solution:
+    def minOperations(self, nums: List[int], numsDivide: List[int]) -> int:
+        nums.sort()
+        count=0
+        c=reduce(gcd,numsDivide)
+        for num in nums:
+            if c%num == 0:
+                return count
+            count+=1
+        return -1
+    print(minOperations)
+        
+           
+           
+      //evaluvated Minimum Deletions to Make Array Divisible using the gcd method in python
