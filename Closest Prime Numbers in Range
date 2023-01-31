@@ -1,0 +1,34 @@
+class Solution:
+    def closestPrimes(self, left: int, right: int) -> List[int]:
+        def sieve(num):
+            primes = [True] * (num+1)
+            primes[0] = primes[1] = False
+            
+            for i in range(2, num+1):
+                if primes[i]:
+                    for j in range(i*i, num+1, i):
+                        primes[j] = False
+            return primes
+        
+        primes = sieve(right)
+        
+        pa = pb = inf
+        res = [-inf, inf]
+        
+        for i in range(left, right+1):
+            if primes[i]:
+                if pa == inf:
+                    pa = i
+                elif pb == inf:
+                    pb = i
+                else:
+                    pa = pb
+                    pb = i
+            if pa!=inf and pb != inf and pb-pa < res[-1]-res[0]:
+                res = [pa, pb]
+        
+        return [-1,-1] if inf in res else res
+        
+        #Closest Prime Numbers in Range
+        #using python
+        
